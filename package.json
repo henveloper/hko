@@ -1,6 +1,6 @@
 {
   "name": "hko",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "wrapper for HKO open data API",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -14,6 +14,7 @@
   },
   "author": "henveloper",
   "license": "WTFPL",
+  "files": ["build/**/*"],
   "bugs": {
     "url": "https://github.com/henveloper/hko/issues"
   },
