@@ -1,9 +1,11 @@
 {
   "name": "hko",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wrapper for HKO open data API",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
+    "build": "tsc --build --clean && tsc --build",
     "test": "mocha --exit --timeout 30000 -r ts-node/register tests/HKO.test.ts"
   },
   "repository": {
