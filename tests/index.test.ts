@@ -3,9 +3,10 @@ import { describe, it } from 'mocha';
 import HKO from "../src";
 
 describe('HKO', () => {
-    it('#weather(), flw', async () => {
-        const data = await HKO.weather('flw', 'en');
-        console.log(data);
+    const helper = new HKO("tc");
+
+    it('localWeatherForecast', async () => {
+        const data = await helper.localWeatherForecast();
         assert.isString(data.generalSituation);
         assert.isString(data.tcInfo);
         assert.isString(data.fireDangerWarning);
@@ -15,9 +16,8 @@ describe('HKO', () => {
         assert.isString(data.updateTime);
     });
 
-    it('#weather(), fnd', async () => {
-        const data = await HKO.weather('fnd', 'en');
-        console.log(data);
+    it('nineDayWeatherForecast', async () => {
+        const data = await helper.nineDayWeatherForecast();
         assert.isString(data.generalSituation);
         assert.isString(data.updateTime);
         assert.isObject(data.seaTemp);
@@ -25,8 +25,8 @@ describe('HKO', () => {
         assert.isArray(data.soilTemp);
     });
 
-    it('#weather(), rhrread', async () => {
-        const data = await HKO.weather('rhrread' as any, 'en');
+    it('currentWeatherReport', async () => {
+        const data = await helper.currentWeatherReport();
         console.log(data);
     });
 });
